@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import LinkButton from "./LinkButton";
 import Image from "./Image";
+import { Link } from "react-router-dom";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,10 +10,10 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
-      <div className="flex items-center gap-4 text-2xl font-bold">
+      <Link to="/" className="flex items-center gap-4 text-2xl font-bold">
         <Image path="/apple-touch-icon.png" width={46} height={46} alt="logo" />
-        <span>TheDebugDiaries</span>
-      </div>
+        <span>The Debug Diaries</span>
+      </Link>
 
       {/* MOBILE MENU */}
       <div className="md:hidden p-4">
@@ -32,11 +34,11 @@ const Navbar = () => {
             open ? "-right-0" : "-right-[100%]"
           }`}
         >
-          <LinkButton href="/">Home</LinkButton>
-          <LinkButton href="/">Trending</LinkButton>
-          <LinkButton href="/">Most Popular</LinkButton>
-          <LinkButton href="/">About</LinkButton>
-          <LinkButton href="/" isButton={true}>
+          <LinkButton to="/">Home</LinkButton>
+          <LinkButton to="/">Trending</LinkButton>
+          <LinkButton to="/">Most Popular</LinkButton>
+          <LinkButton to="/">About</LinkButton>
+          <LinkButton to="/" isButton={true}>
             Login 😊
           </LinkButton>
         </div>
@@ -44,13 +46,18 @@ const Navbar = () => {
 
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-semibold">
-        <LinkButton href="/">Home</LinkButton>
-        <LinkButton href="/">Trending</LinkButton>
-        <LinkButton href="/">Most Popular</LinkButton>
-        <LinkButton href="/">About</LinkButton>
-        <LinkButton href="/" isButton={true}>
-          Login 😊
-        </LinkButton>
+        <LinkButton to="/">Home</LinkButton>
+        <LinkButton to="/">Trending</LinkButton>
+        <LinkButton to="/">Most Popular</LinkButton>
+        <LinkButton to="/">About</LinkButton>
+        <SignedOut>
+          <LinkButton to="/login" isButton={true}>
+            Login 😊
+          </LinkButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   );

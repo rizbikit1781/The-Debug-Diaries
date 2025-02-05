@@ -1,8 +1,7 @@
-import React from 'react'
+import React from "react";
 import { IKImage } from "imagekitio-react";
 
 const Image = ({ path, className, width, height, alt }) => {
-  
   return (
     <IKImage
       urlEndpoint={import.meta.env.VITE_IK_URL_ENDPOINT}
@@ -13,8 +12,14 @@ const Image = ({ path, className, width, height, alt }) => {
       width={width}
       height={height}
       alt={alt}
+      transformation={[
+        {
+          width: width,
+          height: height,
+        },
+      ]}
     />
   );
-}
+};
 
-export default Image
+export default Image;

@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const LinkButton = ({ href, children, isButton = false }) => {
+const LinkButton = ({ to, children, isButton = false }) => {
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
       className={`hover:bg-[#4CAF50] hover:py-2 hover:px-4 hover:rounded-3xl hover:text-white ${
         isButton ? "" : "py-2 px-4"
       }`}
@@ -15,7 +16,7 @@ const LinkButton = ({ href, children, isButton = false }) => {
       ) : (
         children
       )}
-    </a>
+    </Link>
   );
 };
 
