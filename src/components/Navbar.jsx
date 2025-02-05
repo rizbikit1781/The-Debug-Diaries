@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import LinkButton from './LinkButton';
+import React, { useState } from "react";
+import LinkButton from "./LinkButton";
+import Image from "./Image";
 
 const Navbar = () => {
-
   const [open, setOpen] = useState(false);
 
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
       <div className="flex items-center gap-4 text-2xl font-bold">
-        <img src="/apple-touch-icon.png" className="w-12 h-12" alt="" />
+        <Image path="/apple-touch-icon.png" width={46} height={46} alt="logo" />
         <span>TheDebugDiaries</span>
       </div>
 
@@ -22,7 +22,8 @@ const Navbar = () => {
           <img
             src={open ? "/x-mark.png" : "/hamburger-mark.png"}
             alt={open ? "Close Menu" : "Open Menu"}
-            className="w-8 h-8"
+            width={46}
+            height={46}
           />
         </div>
         {/* MOBILE LINK LIST */}
@@ -53,6 +54,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
