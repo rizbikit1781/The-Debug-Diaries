@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "../components/Image";
 import { Link } from "react-router-dom";
+import PostMenuActions from "../components/PostMenuActions";
+import Search from "../components/Search";
 
 const SinglePostPage = () => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 mt-10">
       {/* detail */}
       <div className="flex gap-8">
         <div className="hidden lg:block w-2/5">
@@ -44,41 +46,119 @@ const SinglePostPage = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
             explicabo esse, facilis minus laudantium officiis hic quam a alias
             eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
-            vitae?
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
             explicabo esse, facilis minus laudantium officiis hic quam a alias
             eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
-            vitae?
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
           </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
             explicabo esse, facilis minus laudantium officiis hic quam a alias
             eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
-            vitae?
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
+            explicabo esse, facilis minus laudantium officiis hic quam a alias
+            eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
+            explicabo esse, facilis minus laudantium officiis hic quam a alias
+            eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
+            explicabo esse, facilis minus laudantium officiis hic quam a alias
+            eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
+            explicabo esse, facilis minus laudantium officiis hic quam a alias
+            eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nulla
+            explicabo esse, facilis minus laudantium officiis hic quam a alias
+            eligendi minima deserunt aperiam eaque quos eos voluptas, corrupti
+            vitae? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reprehenderit dolores ab ducimus, officia quis cum beatae fugiat
+            eius quos dolorum, sint nihil accusamus dolor animi exercitationem
+            assumenda pariatur. Voluptate, aliquid?
           </p>
         </div>
         {/* menu */}
         <div className="px-4 h-max sticky top-8">
-          <h1>Author</h1>
-          <div className="">
-            <Image
-              path="default-image.jpg"
-              className="w-12 h-12 rounded-full object-cover"
-              width={48}
-              height={48}
-            />
-            <Link>Paradon Meeanan</Link>
+          <h1 className="mb-4 text-sm font-medium">Author</h1>
+          <div className="flex flex-col gap-4">
+            
+            <div className="flex items-center gap-8">
+              <Image
+                path="default-image.jpg"
+                className="w-12 h-12 rounded-full object-cover"
+                width={48}
+                height={48}
+              />
+              <Link>Paradon Meeanan</Link>
+            </div>
+
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+
             <div className="flex gap-2">
               <Link>
-                <Image src="/facebook.svg"/>
+                <Image path="/facebook.svg" />
               </Link>
               <Link>
-                <Image />
+                <Image path="/instagram.svg" />
               </Link>
             </div>
+            
+          </div>
+
+          <PostMenuActions />
+
+          <h1 className="mt-8 mb-4 text-sm font-medium">Categories</h1>
+
+          <div className="flex flex-col gap-2 text-sm">
+            <Link className="underline">All</Link>
+            <Link className="underline">Web Design</Link>
+            <Link className="underline">Development</Link>
+            <Link className="underline">Databases</Link>
+            <Link className="underline">Search Engine</Link>
+            <Link className="underline">Marketing</Link>
+          </div>
+
+          <div>
+            <h1 className="mt-8 mb-4 text-sm font-medium">Search</h1>
+            <Search />
           </div>
         </div>
       </div>
